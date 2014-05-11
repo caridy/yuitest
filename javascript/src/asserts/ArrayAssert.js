@@ -382,19 +382,44 @@ YUITest.ArrayAssert = {
      */
     isUnique: function (array, comparator, message) {
 
+        var i, j, ref, copy;
+
         YUITest.Assert._increment();
 
-        if (!Y.Lang.isArray(array)){
+        if (Object.prototype.toString.call(array) !== "[object Array]") {
             throw new TypeError("ArrayAssert.isUnique(): First argument must be an array");
         }
 
-        if (Y.Lang.isValue(comparator) && !Y.Lang.isFunction(comparator)){
+        // zero or one item arrays are unique.
+        if (array.length <=1) {
+            return;
+        }
+
+        // default to strict equality if comparator hasn't been provided.
+        if (typeof comparator === "undefined") {
+            comparator = function (val1, val2) {
+                return val1 === val2;
+            };
+        } else if (typeof comparator !== "function") {
             throw new TypeError("ArrayAssert.isUnique(): Second argument must be a function");
         }
 
-        if (Y.Array.unique(array, comparator).length < array.length){
-            message = YUITest.Assert._formatMessage(message, "Array contains duplicate(s)");
-            YUITest.Assert.fail(message);
+        // each element in the array is compared with all other elements until a duplicate is found.
+        // given the following array [1, 3, 3, 4]:
+        // first pass:
+        // we extract 1 and compare with [3, 3, 4] ~> no duplicate
+        // second pass:
+        // we extract 3 and compare with [1, 3, 4] ~> duplicate found
+        // test failure
+        for (i=0; i<array.length; i=i+1) {
+            copy = [].concat(array);
+            ref  = copy.splice(i, 1)[0];
+            for (j=0; j<copy.length; j=j+1) {
+                if ( comparator(ref, copy[j]) ) {
+                    message = YUITest.Assert._formatMessage(message, "Array contains duplicate(s)");
+                    YUITest.Assert.fail(message);
+                }
+            }
         }
     }
 

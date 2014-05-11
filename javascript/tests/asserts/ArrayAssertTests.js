@@ -256,6 +256,7 @@
             },
             fail: {
                 testDuplicateNumbersArray: true,
+                testDuplicateNumbersArray2: true,
                 testDuplicateStringsArray: true,
                 testDuplicateReferencesArray: true,
                 testWithComparator: true
@@ -272,6 +273,10 @@
 
         testDuplicateNumbersArray: function () {
             ArrayAssert.isUnique([1, 1, 2]);
+        },
+
+        testDuplicateNumbersArray2: function () {
+            ArrayAssert.isUnique([1, 3, 3]);
         },
 
         testSingleStringsArray: function () {
