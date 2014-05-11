@@ -1,4 +1,3 @@
-
 /**
  * The ArrayAssert object provides functions to test JavaScript array objects
  * for a variety of cases.
@@ -6,7 +5,6 @@
  * @class ArrayAssert
  * @static
  */
-
 YUITest.ArrayAssert = {
 
     //=========================================================================
@@ -14,8 +12,10 @@ YUITest.ArrayAssert = {
     //=========================================================================
 
     /**
-     * Simple indexOf() implementation for an array. Defers to native
-     * if available.
+     * Simple indexOf() implementation for an array.
+     *
+     * Defers to native if available.
+     *
      * @param {Array} haystack The array to search.
      * @param {Any} needle The value to locate.
      * @return {Number} The index of the needle if found or -1 if not.
@@ -36,12 +36,13 @@ YUITest.ArrayAssert = {
     },
 
     /**
-     * Simple some() implementation for an array. Defers to native
-     * if available.
+     * Simple some() implementation for an array.
+     *
+     * Defers to native if available.
+     *
      * @param {Array} haystack The array to search.
      * @param {Function} matcher The function to run on each value.
-     * @return {Boolean} True if any value, when run through the matcher,
-     *      returns true.
+     * @return {Boolean} True if any value, when run through the matcher, returns true.
      * @method _some
      * @private
      */
@@ -59,11 +60,13 @@ YUITest.ArrayAssert = {
     },
 
     /**
-     * Asserts that a value is present in an array. This uses the triple equals
-     * sign so no type coercion may occur.
+     * Asserts that a value is present in an array.
+     *
+     * This uses the triple equals sign so no type coercion may occur.
+     *
      * @param {Object} needle The value that is expected in the array.
      * @param {Array} haystack An array of values.
-     * @param {String} message (Optional) The message to display if the assertion fails.
+     * @param {String} [message] The message to display if the assertion fails.
      * @method contains
      * @static
      */
@@ -78,12 +81,14 @@ YUITest.ArrayAssert = {
     },
 
     /**
-     * Asserts that a set of values are present in an array. This uses the triple equals
-     * sign so no type coercion may occur. For this assertion to pass, all values must
-     * be found.
+     * Asserts that a set of values are present in an array.
+     *
+     * This uses the triple equals sign so no type coercion may occur.
+     * For this assertion to pass, all values must be found.
+     *
      * @param {Object[]} needles An array of values that are expected in the array.
      * @param {Array} haystack An array of values to check.
-     * @param {String} message (Optional) The message to display if the assertion fails.
+     * @param {String} [message] The message to display if the assertion fails.
      * @method containsItems
      * @static
      */
@@ -100,11 +105,13 @@ YUITest.ArrayAssert = {
     },
 
     /**
-     * Asserts that a value matching some condition is present in an array. This uses
-     * a function to determine a match.
+     * Asserts that a value matching some condition is present in an array.
+     *
+     * This uses a function to determine a match.
+     *
      * @param {Function} matcher A function that returns true if the items matches or false if not.
      * @param {Array} haystack An array of values.
-     * @param {String} message (Optional) The message to display if the assertion fails.
+     * @param {String} [message] The message to display if the assertion fails.
      * @method containsMatch
      * @static
      */
@@ -123,12 +130,13 @@ YUITest.ArrayAssert = {
     },
 
     /**
-     * Asserts that a value is not present in an array. This uses the triple equals
-     * Asserts that a value is not present in an array. This uses the triple equals
-     * sign so no type coercion may occur.
+     * Asserts that a value is not present in an array.
+     *
+     * This uses the triple equals sign so no type coercion may occur.
+     *
      * @param {Object} needle The value that is expected in the array.
      * @param {Array} haystack An array of values.
-     * @param {String} message (Optional) The message to display if the assertion fails.
+     * @param {String} [message] The message to display if the assertion fails.
      * @method doesNotContain
      * @static
      */
@@ -143,12 +151,14 @@ YUITest.ArrayAssert = {
     },
 
     /**
-     * Asserts that a set of values are not present in an array. This uses the triple equals
-     * sign so no type coercion may occur. For this assertion to pass, all values must
-     * not be found.
+     * Asserts that a set of values are not present in an array.
+     *
+     * This uses the triple equals sign so no type coercion may occur.
+     * For this assertion to pass, all values must not be found.
+     *
      * @param {Object[]} needles An array of values that are not expected in the array.
      * @param {Array} haystack An array of values to check.
-     * @param {String} message (Optional) The message to display if the assertion fails.
+     * @param {String} [message] The message to display if the assertion fails.
      * @method doesNotContainItems
      * @static
      */
@@ -166,11 +176,13 @@ YUITest.ArrayAssert = {
     },
 
     /**
-     * Asserts that no values matching a condition are present in an array. This uses
-     * a function to determine a match.
+     * Asserts that no values matching a condition are present in an array.
+     *
+     * This uses a function to determine a match.
+     *
      * @param {Function} matcher A function that returns true if the item matches or false if not.
      * @param {Array} haystack An array of values.
-     * @param {String} message (Optional) The message to display if the assertion fails.
+     * @param {String} [message] The message to display if the assertion fails.
      * @method doesNotContainMatch
      * @static
      */
@@ -191,11 +203,13 @@ YUITest.ArrayAssert = {
 
     /**
      * Asserts that the given value is contained in an array at the specified index.
+     *
      * This uses the triple equals sign so no type coercion will occur.
+     *
      * @param {Object} needle The value to look for.
      * @param {Array} haystack The array to search in.
      * @param {Number} index The index at which the value should exist.
-     * @param {String} message (Optional) The message to display if the assertion fails.
+     * @param {String} [message] The message to display if the assertion fails.
      * @method indexOf
      * @static
      */
@@ -218,13 +232,14 @@ YUITest.ArrayAssert = {
     },
 
     /**
-     * Asserts that the values in an array are equal, and in the same position,
-     * as values in another array. This uses the double equals sign
-     * so type coercion may occur. Note that the array objects themselves
-     * need not be the same for this test to pass.
+     * Asserts that the values in an array are equal, and in the same position, as values in another array.
+     *
+     * This uses the double equals sign so type coercion may occur.
+     * Note that the array objects themselves need not be the same for this test to pass.
+     *
      * @param {Array} expected An array of the expected values.
      * @param {Array} actual Any array of the actual values.
-     * @param {String} message (Optional) The message to display if the assertion fails.
+     * @param {String} [message] The message to display if the assertion fails.
      * @method itemsAreEqual
      * @static
      */
@@ -252,15 +267,15 @@ YUITest.ArrayAssert = {
     },
 
     /**
-     * Asserts that the values in an array are equivalent, and in the same position,
-     * as values in another array. This uses a function to determine if the values
-     * are equivalent. Note that the array objects themselves
-     * need not be the same for this test to pass.
+     * Asserts that the values in an array are equivalent, and in the same position, as values in another array.
+     *
+     * This uses a function to determine if the values are equivalent.
+     * Note that the array objects themselves need not be the same for this test to pass.
+     *
      * @param {Array} expected An array of the expected values.
      * @param {Array} actual Any array of the actual values.
-     * @param {Function} comparator A function that returns true if the values are equivalent
-     *      or false if not.
-     * @param {String} message (Optional) The message to display if the assertion fails.
+     * @param {Function} comparator A function that returns true if the values are equivalent or false if not.
+     * @param {String} [message] The message to display if the assertion fails.
      * @method itemsAreEquivalent
      * @static
      */
@@ -289,8 +304,9 @@ YUITest.ArrayAssert = {
 
     /**
      * Asserts that an array is empty.
+     *
      * @param {Array} actual The array to test.
-     * @param {String} message (Optional) The message to display if the assertion fails.
+     * @param {String} [message] The message to display if the assertion fails.
      * @method isEmpty
      * @static
      */
@@ -303,8 +319,9 @@ YUITest.ArrayAssert = {
 
     /**
      * Asserts that an array is not empty.
+     *
      * @param {Array} actual The array to test.
-     * @param {String} message (Optional) The message to display if the assertion fails.
+     * @param {String} [message] The message to display if the assertion fails.
      * @method isNotEmpty
      * @static
      */
@@ -316,13 +333,14 @@ YUITest.ArrayAssert = {
     },
 
     /**
-     * Asserts that the values in an array are the same, and in the same position,
-     * as values in another array. This uses the triple equals sign
-     * so no type coercion will occur. Note that the array objects themselves
-     * need not be the same for this test to pass.
+     * Asserts that the values in an array are the same, and in the same position, as values in another array.
+     *
+     * This uses the triple equals sign so no type coercion will occur.
+     * Note that the array objects themselves need not be the same for this test to pass.
+     *
      * @param {Array} expected An array of the expected values.
      * @param {Array} actual Any array of the actual values.
-     * @param {String} message (Optional) The message to display if the assertion fails.
+     * @param {String} [message] The message to display if the assertion fails.
      * @method itemsAreSame
      * @static
      */
@@ -345,13 +363,14 @@ YUITest.ArrayAssert = {
     },
 
     /**
-     * Asserts that the given value is contained in an array at the specified index,
-     * starting from the back of the array.
+     * Asserts that the given value is contained in an array at the specified index, starting from the back of the array.
+     *
      * This uses the triple equals sign so no type coercion will occur.
+     *
      * @param {Object} needle The value to look for.
      * @param {Array} haystack The array to search in.
      * @param {Number} index The index at which the value should exist.
-     * @param {String} message (Optional) The message to display if the assertion fails.
+     * @param {String} [message] The message to display if the assertion fails.
      * @method lastIndexOf
      * @static
      */
@@ -373,6 +392,7 @@ YUITest.ArrayAssert = {
 
     /**
      * Asserts that given array doesn't contain duplicate items.
+     *
      * @param {Array} array The array to check.
      * @param {Function} [comparator=null] A custom function to use to test the equality of two values.
      *      This function is similar to the one given to {{#crossLink "Array/unique:method"}}Y.Array.unique{{/crossLink}}.
