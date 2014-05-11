@@ -67,8 +67,7 @@ YUITest.ArrayAssert = {
      * @method contains
      * @static
      */
-    contains : function (needle, haystack,
-                           message) {
+    contains: function (needle, haystack, message) {
 
         YUITest.Assert._increment();
 
@@ -87,8 +86,7 @@ YUITest.ArrayAssert = {
      * @method containsItems
      * @static
      */
-    containsItems : function (needles, haystack,
-                           message) {
+    containsItems: function (needles, haystack, message) {
         YUITest.Assert._increment();
 
         //begin checking values
@@ -108,8 +106,7 @@ YUITest.ArrayAssert = {
      * @method containsMatch
      * @static
      */
-    containsMatch : function (matcher, haystack,
-                           message) {
+    containsMatch: function (matcher, haystack, message) {
 
         YUITest.Assert._increment();
         //check for valid matcher
@@ -132,8 +129,7 @@ YUITest.ArrayAssert = {
      * @method doesNotContain
      * @static
      */
-    doesNotContain : function (needle, haystack,
-                           message) {
+    doesNotContain: function (needle, haystack, message) {
 
         YUITest.Assert._increment();
 
@@ -152,8 +148,7 @@ YUITest.ArrayAssert = {
      * @method doesNotContainItems
      * @static
      */
-    doesNotContainItems : function (needles, haystack,
-                           message) {
+    doesNotContainItems: function (needles, haystack, message) {
 
         YUITest.Assert._increment();
 
@@ -174,8 +169,7 @@ YUITest.ArrayAssert = {
      * @method doesNotContainMatch
      * @static
      */
-    doesNotContainMatch : function (matcher, haystack,
-                           message) {
+    doesNotContainMatch: function (matcher, haystack, message) {
 
         YUITest.Assert._increment();
 
@@ -199,7 +193,7 @@ YUITest.ArrayAssert = {
      * @method indexOf
      * @static
      */
-    indexOf : function (needle, haystack, index, message) {
+    indexOf: function (needle, haystack, index, message) {
 
         YUITest.Assert._increment();
 
@@ -228,8 +222,7 @@ YUITest.ArrayAssert = {
      * @method itemsAreEqual
      * @static
      */
-    itemsAreEqual : function (expected, actual,
-                           message) {
+    itemsAreEqual: function (expected, actual, message) {
 
         YUITest.Assert._increment();
 
@@ -264,8 +257,7 @@ YUITest.ArrayAssert = {
      * @method itemsAreEquivalent
      * @static
      */
-    itemsAreEquivalent : function (expected, actual,
-                           comparator, message) {
+    itemsAreEquivalent: function (expected, actual, comparator, message) {
 
         YUITest.Assert._increment();
 
@@ -294,7 +286,7 @@ YUITest.ArrayAssert = {
      * @method isEmpty
      * @static
      */
-    isEmpty : function (actual, message) {
+    isEmpty: function (actual, message) {
         YUITest.Assert._increment();
         if (actual.length > 0){
             YUITest.Assert.fail(YUITest.Assert._formatMessage(message, "Array should be empty."));
@@ -308,7 +300,7 @@ YUITest.ArrayAssert = {
      * @method isNotEmpty
      * @static
      */
-    isNotEmpty : function (actual, message) {
+    isNotEmpty: function (actual, message) {
         YUITest.Assert._increment();
         if (actual.length === 0){
             YUITest.Assert.fail(YUITest.Assert._formatMessage(message, "Array should not be empty."));
@@ -326,8 +318,7 @@ YUITest.ArrayAssert = {
      * @method itemsAreSame
      * @static
      */
-    itemsAreSame : function (expected, actual,
-                          message) {
+    itemsAreSame: function (expected, actual, message) {
 
         YUITest.Assert._increment();
 
@@ -355,7 +346,7 @@ YUITest.ArrayAssert = {
      * @method lastIndexOf
      * @static
      */
-    lastIndexOf : function (needle, haystack, index, message) {
+    lastIndexOf: function (needle, haystack, index, message) {
 
         //try to find the value in the array
         for (var i=haystack.length; i >= 0; i--){
