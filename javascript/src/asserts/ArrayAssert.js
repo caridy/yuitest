@@ -411,10 +411,10 @@ YUITest.ArrayAssert = {
         // second pass:
         // we extract 3 and compare with [1, 3, 4] ~> duplicate found
         // test failure
-        for (i=0; i<array.length; i=i+1) {
+        for (i = 0; i < array.length; i = i + 1) {
             copy = [].concat(array);
             ref  = copy.splice(i, 1)[0];
-            for (j=0; j<copy.length; j=j+1) {
+            for (j = 0; j < copy.length; j = j + 1) {
                 if ( comparator(ref, copy[j]) ) {
                     message = YUITest.Assert._formatMessage(message, "Array contains duplicate(s)");
                     YUITest.Assert.fail(message);
